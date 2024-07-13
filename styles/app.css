@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+* li {
+  list-style: none;
+}
+
+:root {
+  --primary: #F0B37B;
+  --bg: #252935;
+  --text: #354650;
+  --gray-dark: #D9D9D9;
+  --gray-light: #F4F4F4;
+  --white: #FFFFFF;
+  --box-shadow: 0px 0px 12px 7px rgba(240, 179, 123, 0.3);
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: var(--text);
+}
+
+.auto-user-search {
+  margin-top: 3rem;
+  width: 80%;
+  max-width: 350px;
+}
+
+.search-container {
+  position: relative;
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: .25rem;
+  display: flex;
+  align-items: center;
+  transition: border-radius .2s ease;
+}
+
+.search-container.expanded {
+  border-radius: .5rem .5rem 0 0;
+}
+
+.search-container img.search-icon {
+  width: 1rem;
+  margin: auto .25rem;
+}
+.search-container input {
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  padding-left: .5rem;
+  width: 100%;
+  color: var(--text);
+}
+
+.dropdown-container {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  padding: .5rem;
+  border-radius: 0 0 .5rem .5rem;
+  border-top: 1px solid var(--gray-dark);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease;
+}
+
+.dropdown-container.show {
+  top: 100%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+ul.dropdown {
+  max-height: 65px;
+  overflow: auto;
+}
+ul.dropdown::-webkit-scrollbar {
+  background-color: var(--gray-light);
+  border-radius: 25px;
+  width: 4px;
+}
+ul.dropdown::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 25px;
+}
+
+ul.dropdown li {
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+
+ul.dropdown li:hover {
+  background-color: var(--gray-light);
+}
+
+.dropdown-container li img {
+  width: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+ul.dropdown li .group {
+  margin-left: .5rem;
+}
+
+ul.dropdown li .group p:first-of-type {
+  font-weight: 500;
+  font-size: .7rem;
+}
+
+ul.dropdown li .group p:last-of-type {
+  font-size: .3rem;
+}
